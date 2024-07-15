@@ -1,0 +1,145 @@
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('images/bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  #app {
+    position: relative;
+    width: 450px;
+    height: 600px;
+  }
+  
+  .like-button,
+  .dislike-button {
+    border: none;
+    background: none;
+    font-size: 2.5em;
+    cursor: pointer;
+    position: absolute;
+  }
+  
+  .like-button {
+    right: 30px;
+    color: red;
+  }
+  
+  .dislike-button {
+    left: 30px;
+    color: black;
+  }
+  
+  .card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover img {
+    transform: scale(1.1);
+  }
+  
+  .details {
+    padding: 10px 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .description {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .item-id {
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 5px;
+  }
+  
+  .hashtags {
+    color: #888;
+    margin-bottom: 5px;
+  }
+  
+  .price {
+    margin-bottom: 5px;
+  }
+  
+  .rating {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    color: gold;
+    margin-top: 5px;
+  }
+  
+  .rating span {
+    margin: 0 2px;
+  }
+  
+  .card.dragging {
+    transition: none;
+  }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

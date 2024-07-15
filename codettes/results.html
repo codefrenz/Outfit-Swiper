@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outfit Results</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Liked Outfits</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Outfit Name</th>
+        <th>Item ID</th>
+      </tr>
+    </thead>
+    <tbody id="liked-outfits">
+    </tbody>
+  </table>
+
+  <h2>Disliked Outfits</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Outfit Name</th>
+        <th>Item ID</th>
+      </tr>
+    </thead>
+    <tbody id="disliked-outfits">
+    </tbody>
+  </table>
+
+  <button id="reset-button">Reset Data</button>
+
+  <script>
+    function populateOutfits() {
+      const likedOutfits = JSON.parse(localStorage.getItem('likedOutfits')) || [];
+      const dislikedOutfits = JSON.parse(localStorage.getItem('dislikedOutfits')) || [];
+
+      const likedTable = document.getElementById('liked-outfits');
+      const dislikedTable = document.getElementById('disliked-outfits');
+
+      likedOutfits.forEach(outfit => {
+        const row = likedTable.insertRow();
+        row.insertCell(0).textContent = outfit.description;
+        row.insertCell(1).textContent = outfit.id;
+      });
+
+      dislikedOutfits.forEach(outfit => {
+        const row = dislikedTable.insertRow();
+        row.insertCell(0).textContent = outfit.description;
+        row.insertCell(1).textContent = outfit.id;
+      });
+    }
+
+    function resetData() {
+      localStorage.removeItem('likedOutfits');
+      localStorage.removeItem('dislikedOutfits');
+      window.location.reload();
+    }
+
+    document.getElementById('reset-button').addEventListener('click', resetData);
+
+    populateOutfits();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
